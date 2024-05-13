@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Old Flood Data Reports</h1>
-    </header>
+   
 
     <section class="old-flood-data-cards">
         <div class="card">
@@ -30,10 +28,42 @@
             <p>Location: City C</p>
             <p>Severity: Low</p>
         </div>
+        <?php
+        // Connect to the  database 
+        $conn = mysqli_connect('localhost', 'root', '', 'floodRisk');
+
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        // SQL query to fetch old flood data reports
+        $sql = "SELECT * FROM old_flood_data";
+        $result = mysqli_query($conn, $sql);
+
+        // Check if there are any results
+        if (mysqli_num_rows($result) > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="card">';
+                echo '<h2>' . $row['title'] . '</h2>';
+                echo '<p>Date: ' . $row['date'] . '</p>';
+                echo '<p>Location: ' . $row['location'] . '</p>';
+                echo '<p>Severity: ' . $row['severity'] . '</p>';
+                echo '</div>';
+            }
+        } else {
+            echo "No old flood data reports available";
+        }
+
+        // Close connection
+        mysqli_close($conn);
+        ?>
     </section>
 </br>
 </br>
 </br>
+
 
     <footer>
         <p>&copy; 2024 Flood Data Reports</p>
