@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flood Risk Management System Dashboard</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Include your CSS styles -->
+    <title>Flood Management System Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> <!-- Include ApexCharts library for interactive charts -->
 </head>
 <body>
     <header>
-        <h1>Flood Risk Management System Dashboard</h1>
+        <h1>Flood Management System Dashboard</h1>
     </header>
+
     <nav>
         <ul>
-            <li><a href="flood_prediction.php">Flood Prediction</a></li>
-            <li><a href="weather_prediction.php">Weather Prediction</a></li>
-            <li><a href="flood_area.php">Current Flood Areas</a></li>
-            <li><a href="prior_reports.php">Prior Flood Reports</a></li>
-            <li><a href="property_damage.php">Property Damage</a></li>
-            <li><a href="water_level_monitoring.php">Water Level Monitoring</a></li>
+            <li><a href="flood_prediction.html">Flood Prediction</a></li>
+            <li><a href="weather_prediction.html">Weather Prediction</a></li>
+            <li><a href="flood_area.html">Current Flood Areas</a></li>
+            <li><a href="prior_reports.html">Prior Flood Reports</a></li>
+            <li><a href="property_damage.html">Property Damage</a></li>
+            <li><a href="water_level_monitoring.html">Water Level Monitoring</a></li>
         </ul>
     </nav>
+
     <section class="overview">
         <h2>System Overview</h2>
-        <div class="overview-content">
+        <div class="grid-container">
             <div class="card">
                 <h3>Flood Prediction</h3>
-                <!-- Include relevant information about flood prediction -->
+                <div id="flood-prediction-chart"></div>
             </div>
             <div class="card">
                 <h3>Weather Prediction</h3>
-                <!-- Include relevant information about weather prediction -->
+                <div id="weather-prediction-chart"></div>
             </div>
             <div class="card">
                 <h3>Current Flood Areas</h3>
-                <!-- Include relevant information about current flood areas -->
+                <div id="current-flood-areas-map"></div>
             </div>
         </div>
     </section>
+
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Flood Risk Management System</p>
+        <p>&copy; 2024 Flood Management System</p>
     </footer>
+
+    <script>
+        // JavaScript code to fetch and render dynamic content
+        // Example: Use JavaScript to fetch data and generate interactive charts using ApexCharts library
+        // Example code for fetching and rendering charts is omitted for brevity
+    </script>
 </body>
 </html>
+S
